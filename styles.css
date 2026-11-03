@@ -1240,7 +1240,8 @@ a.product-card { cursor: pointer; }
   margin-top: 24px;
 }
 .tech-feature-media {
-  aspect-ratio: 1;
+  /* 竖版 3:4：与原图比例一致，整机完整入画（cover 仅裁 0.8% 宽度） */
+  aspect-ratio: 3 / 4;
   background: var(--bg-dark-2);
   border-radius: var(--r-lg);
   border: 1px solid var(--line-dark);
@@ -1253,8 +1254,7 @@ a.product-card { cursor: pointer; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 竖图入方框：取景略偏上，保住图内「A2D ORTHO / 3D打印机」字样 */
-  object-position: center 20%;
+  object-position: center;
 }
 .tech-feature-tag {
   display: inline-block;
