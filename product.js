@@ -438,7 +438,7 @@
     var g = GROUPS[p.g];
     return '' +
       '<li class="pd-item" data-id="' + p.id + '" tabindex="0" role="button" aria-label="' + esc(L({ cn: '查看详细参数', en: 'View specifications' })) + '">' +
-        '<div class="pd-ph" aria-hidden="true"><span class="ph-mark">' + esc(g[lang()]) + '</span></div>' +
+        '<div class="pd-ph" aria-hidden="true"><span class="ph-mark">' + esc(p[lang()]) + '</span></div>' +
         '<div class="pd-body">' +
           '<span class="pd-item-num">' + pad(i) + '</span>' +
           '<h3 class="pd-item-title">' + esc(p[lang()]) + '</h3>' +
