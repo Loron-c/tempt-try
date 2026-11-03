@@ -159,9 +159,13 @@ if (animate) {
     opacity: 0, x: -60, duration: 1, ease: 'power3.out',
     scrollTrigger: { trigger: '.tech-feature', start: 'top 80%', toggleActions: 'play none none reverse' }
   });
-  gsap.from('.tech-feature-body', {
-    opacity: 0, x: 60, duration: 1, ease: 'power3.out',
+  gsap.from('.tech-media-tile', {
+    opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: 'power3.out',
     scrollTrigger: { trigger: '.tech-feature', start: 'top 80%', toggleActions: 'play none none reverse' }
+  });
+  gsap.from('.tech-feature-caption', {
+    opacity: 0, y: 40, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: '.tech-feature-caption', start: 'top 85%', toggleActions: 'play none none reverse' }
   });
   gsap.from('.tech-card', {
     opacity: 0, y: 30, duration: 0.7, ease: 'power3.out',

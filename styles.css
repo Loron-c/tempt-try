@@ -1236,18 +1236,32 @@ a.product-card { cursor: pointer; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: center;
+  /* 去掉 align-items:center：左卡随右列双图拉伸，两列严格等高 */
   margin-top: 24px;
 }
 .tech-feature-media {
-  /* 竖版 3:4：与原图比例一致，整机完整入画（cover 仅裁 0.8% 宽度） */
-  aspect-ratio: 3 / 4;
+  /* 高度随右列两张 4:3 图拉伸（桌面 536×820），cover 仅裁 ~7% 宽度 */
   background: var(--bg-dark-2);
   border-radius: var(--r-lg);
   border: 1px solid var(--line-dark);
   position: relative;
   overflow: hidden;
 }
+.tech-media-pair {
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+.tech-media-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line-dark);
+  background: var(--bg-dark-2);
+  aspect-ratio: 4 / 3;
+}
+.tech-media-tile .tech-feature-img { object-position: center top; }
+.tech-feature-caption { margin-top: 44px; }
 .tech-feature-img {
   position: absolute;
   inset: 0;
@@ -1855,6 +1869,7 @@ body.menu-open { overflow: hidden; }
   .stat-card:nth-child(2) { border-bottom: 1px solid var(--line); }
   .pillars, .product-grid, .culture-grid { grid-template-columns: 1fr; }
   .tech-feature { grid-template-columns: 1fr; gap: 40px; }
+  .tech-feature-media { aspect-ratio: 3 / 4; }
   .tech-secondary { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
