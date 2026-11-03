@@ -852,7 +852,7 @@ a.product-card { cursor: pointer; }
    换真图时把 .pd-ph 整块换成 <img> 即可，其余结构无需改动 */
 .pd-ph {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   width: 100%;
   display: flex;
   align-items: center;
@@ -860,25 +860,17 @@ a.product-card { cursor: pointer; }
   overflow: hidden;
   background: linear-gradient(160deg, var(--navy-900) 0%, var(--navy-700) 100%);
 }
-.pd-ph::after {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 26px 26px;
-  mask-image: radial-gradient(circle at 50% 45%, #000 15%, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 15%, transparent 70%);
-}
 .pd-ph .ph-mark {
   position: relative;
   z-index: 1;
-  padding: 0 18px;
+  max-width: 100%;
+  padding: 0 20px;
   text-align: center;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 19px;
+  line-height: 1.4;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  overflow-wrap: break-word;
   color: rgba(255, 255, 255, 0.92);
 }
 .pd-ph .ph-tag {

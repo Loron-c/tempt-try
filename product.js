@@ -441,7 +441,6 @@
         '<div class="pd-ph" aria-hidden="true"><span class="ph-mark">' + esc(p[lang()]) + '</span></div>' +
         '<div class="pd-body">' +
           '<span class="pd-item-num">' + pad(i) + '</span>' +
-          '<h3 class="pd-item-title">' + esc(p[lang()]) + '</h3>' +
           '<span class="mat-badge">' + esc(g[lang()]) + '</span>' +
           '<p class="pd-summary"><span class="sum-text">' + esc(lang() === 'cn' ? p.oCn : p.oEn) + '</span></p>' +
         '</div>' +
