@@ -500,8 +500,10 @@
     var hero = $('#dt-hero');
     if (IMGS[p.id]) {
       hero.classList.add('has-img');
+      /* soft：原图自带浅灰底的产品，缩一点并用径向淡出柔化边界 */
+      var soft = p.id === 'abutment' ? ' is-soft' : '';
       $('#dt-visual').innerHTML =
-        '<img src="assets/products/' + p.id + '.jpg" alt="' + esc(L(p)) + '" loading="lazy">';
+        '<img class="' + soft.trim() + '" src="assets/products/' + p.id + '.jpg" alt="' + esc(L(p)) + '" loading="lazy">';
     } else {
       hero.classList.remove('has-img');
       $('#dt-visual').innerHTML = '';
