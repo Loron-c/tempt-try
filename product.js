@@ -86,7 +86,15 @@
 
   /* ---------- 产品数据（30 项） ----------
      secs 章节正文目前以中文为主；英文界面下浮层顶部有提示条。
-     「参数待补充」= 资料尚未提供，不做臆测填写。 */
+     「参数待补充」= 资料尚未提供，不做臆测填写。
+     IMGS：已有实拍图的产品（assets/products/<id>.jpg），其余暂无图位。 */
+  var IMGS = {
+    wieland:1, ablaze:1, emax:1, lava:1, laser:1, pfm:1,
+    abutment:1, overdenture:1, casting:1,
+    snoring:1, hawley:1, expansion:1, sport:1,
+    bego:1, ti:1, full:1, peek:1,
+    snap:1, preciline:1
+  };
   var P = [
     /* ============ 全瓷系列 ============ */
     { g: 'ceramic', id: 'wieland', cn: '威兰德全瓷', en: 'Wieland Zirconia',
@@ -487,6 +495,17 @@
     $('#dt-chips').innerHTML = (p.chips || []).map(function (c) {
       return '<span>' + esc(lang() === 'cn' ? c[0] : c[1]) + '</span>';
     }).join('');
+
+    /* 有实拍图则显示右侧图位，无图则回到纯文字版式 */
+    var hero = $('#dt-hero');
+    if (IMGS[p.id]) {
+      hero.classList.add('has-img');
+      $('#dt-visual').innerHTML =
+        '<img src="assets/products/' + p.id + '.jpg" alt="' + esc(L(p)) + '" loading="lazy">';
+    } else {
+      hero.classList.remove('has-img');
+      $('#dt-visual').innerHTML = '';
+    }
 
     var body = '';
     (p.secs || []).forEach(function (s) {

@@ -1999,3 +1999,51 @@ body.menu-open { overflow: hidden; }
     radial-gradient(60% 90% at 78% 10%, rgba(31, 70, 144, 0.35) 0%, transparent 70%),
     linear-gradient(180deg, rgba(10, 31, 68, 0.94) 0%, rgba(10, 31, 68, 0.82) 45%, rgba(10, 31, 68, 0.55) 100%);
 }
+
+/* ===== 产品详情浮层：实拍图 ===== */
+.dt-hero.has-img {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 26px;
+  align-items: center;
+  padding-right: 76px; /* 给关闭按钮留位 */
+}
+.dt-visual {
+  display: none;
+}
+.dt-hero.has-img .dt-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+/* 图片四边羽化 + lighten 混合：暗底透出深蓝头，产品主体自然浮现 */
+.dt-visual img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+@media (max-width: 960px) {
+  .dt-hero.has-img { grid-template-columns: 1fr; padding-right: 28px; }
+  .dt-hero.has-img .dt-visual { order: -1; max-width: 320px; }
+}

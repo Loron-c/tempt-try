@@ -157,12 +157,15 @@
   <!-- ========== 详情参数浮层（先于脚本，product.js 初始化时要用） ========== -->
   <div class="dt-overlay" id="dt-overlay">
     <div class="dt-panel">
-      <div class="dt-hero">
+      <div class="dt-hero" id="dt-hero">
         <button class="dt-close" id="dt-close" aria-label="Close">×</button>
-        <div class="dt-crumb" id="dt-crumb"></div>
-        <h2 id="dt-title"></h2>
-        <p class="dt-sub" id="dt-sub"></p>
-        <div class="dt-chips" id="dt-chips"></div>
+        <div class="dt-hero-text">
+          <div class="dt-crumb" id="dt-crumb"></div>
+          <h2 id="dt-title"></h2>
+          <p class="dt-sub" id="dt-sub"></p>
+          <div class="dt-chips" id="dt-chips"></div>
+        </div>
+        <div class="dt-visual" id="dt-visual"></div>
       </div>
       <div class="dt-body" id="dt-body"></div>
     </div>
